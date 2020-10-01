@@ -1,0 +1,66 @@
+
+explore: Waystar_demo_result {}
+view: Waystar_demo_result {
+  sql_table_name: dbo.demo_Result ;;
+
+  dimension: category {
+    type: string
+    sql: ${TABLE}.category ;;
+  }
+
+  dimension: country {
+    type: string
+    map_layer_name: countries
+    sql: ${TABLE}.Country ;;
+  }
+
+  dimension: customer {
+    type: string
+    sql: ${TABLE}.Customer ;;
+  }
+
+  dimension: orderdate {
+    type: string
+    sql: ${TABLE}.orderdate ;;
+  }
+
+  dimension: orderid {
+    type: string
+    sql: ${TABLE}.Orderid ;;
+  }
+
+  dimension: productname {
+    type: string
+    sql: ${TABLE}.Productname ;;
+  }
+
+  dimension: quantity {
+    type: number
+    sql: ${TABLE}.Quantity ;;
+  }
+
+  dimension: sales {
+    type: number
+    sql: ${TABLE}.Sales ;;
+  }
+
+  dimension: state {
+    type: string
+    sql: ${TABLE}.State ;;
+  }
+
+  dimension: subcategory {
+    type: string
+    sql: ${TABLE}.Subcategory ;;
+  }
+
+  dimension: username {
+    type: string
+    sql: ${TABLE}.Username ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [username, productname]
+  }
+}
